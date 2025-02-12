@@ -3,13 +3,12 @@ import {Mantela, AboutMe, Extension, Provider} from "./types.ts"
 
 let dbPath: string = "mikopbx.db"
 if (Deno.args.length <= 1) {  // mikopbx-mantela /var/spool/mikopbx/cf/conf/mikopbx.db
-    dbPath = Deno.args[0];
+    dbPath = Deno.args[0] == undefined ? dbPath : Deno.args[0];
 } else {
     console.error("エラー: 引数の個数が間違っています。");
 }
 
 const db = new Database(dbPath, {create: false, readonly: true});
-
 
 const pbxName:string = db.prepare("SELECT value FROM m_PbxSettings WHERE key = 'Name'").value<[string]>()![0];
 const aboutMe: AboutMe = {name: pbxName, prefferedPrefix: "", identifier: ""}
