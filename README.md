@@ -1,10 +1,10 @@
 # mikopbx-mantela
-Mikopbxの設定データベースからmantela.jsonを生成する
+MikoPBXの設定データベースからmantela.jsonを生成する
 
 ## 使い方
 ```bash
 $ deno task build
-$ ./build/mikopbx-mantela
+$ ./build/mikopbx-mantela [path to mikopbx.db]
 ```
 
 ## 注意
