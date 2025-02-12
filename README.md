@@ -1,5 +1,5 @@
 # mikopbx-mantela
-MikoPBXの設定データベースからmantela.jsonを生成する
+MikoPBXの設定データベースからmantela.jsonのテンプレートを生成する
 
 ## 使い方
 ```bash
