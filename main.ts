@@ -25,6 +25,7 @@ const providers: Provider[] = db.prepare("SELECT rulename, numberbeginswith FROM
 
 // JSONにするオブジェクトをつくる
 const mantela: Mantela = {
+    $schema: "https://kusaremkn.github.io/mantela/mantela.schema.json",
     version: "0.0.0",
     aboutMe: aboutMe,
     extensions: extensions,
