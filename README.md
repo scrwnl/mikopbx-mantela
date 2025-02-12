@@ -4,7 +4,7 @@ MikoPBXの設定データベースからmantela.jsonのテンプレートを生�
 ## 使い方
 ```bash
 $ deno task build
-$ ./build/mikopbx-mantela [path to mikopbx.db]
+$ ./build/mikopbx-mantela [path to mikopbx.db] > mantela.json
 ```
 
 ## 注意
