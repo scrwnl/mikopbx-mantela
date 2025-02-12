@@ -1,25 +1,33 @@
 import { Database } from "jsr:@db/sqlite@0.12.0";
 import {Mantela, AboutMe, Extension, Provider} from "./types.ts"
 
-const db = new Database("mikopbx.db");
+let dbPath: string = "mikopbx.db"
+if (Deno.args.length <= 1) {  // mikopbx-mantela /var/spool/mikopbx/cf/conf/mikopbx.db
+    dbPath = Deno.args[0];
+} else {
+    console.error("エラー: 引数の個数が間違っています。");
+}
 
-//const aboutMe: AboutMe = {}
+const db = new Database(dbPath, {create: false, readonly: true});
 
-const extensions:Extension[] = db.prepare("SELECT extension,description FROM m_Sip").values()
+
+const pbxName:string = db.prepare("SELECT value FROM m_PbxSettings WHERE key = 'Name'").value<[string]>()![0];
+const aboutMe: AboutMe = {name: pbxName, prefferedPrefix: "", identifier: ""}
+
+const extensions:Extension[] = db.prepare("SELECT extension,description FROM m_Sip WHERE type = 'peer'").values()
 .map(([name, extension]:string[]) => (
-    {name: name, extension: extension, type: "unknown", model: ""}
+    {name: name, extension: extension, type: "phone", model: ""}
 ));
 
-const providers: Provider[] = []
+const providers: Provider[] = db.prepare("SELECT rulename, numberbeginswith FROM m_OutgoingRoutingTable").values()
+.map(([name, prefix]:string[])=>(
+    {name: name, prefix: prefix, identifier: "", mantela: ""}
+))
 
 // JSONにするオブジェクトをつくる
 const mantela: Mantela = {
     version: "0.0.0",
-    aboutMe: {
-        name: "Example PBX",
-        prefferedPrefix: "0123",
-        identifier: "7e33cf20-e8d4-11ef-a9d8-00224858950d",
-    },
+    aboutMe: aboutMe,
     extensions: extensions,
     providers: providers
 }

@@ -16,8 +16,8 @@ export type AboutMe = {
 }
 
 export type Extension = {
-    name?: string
-    extension?: string
+    name: string
+    extension: string
     type?: "phone" | "fax" |
     "modem" | "switchboard" |
     "other" | "reserved" |
@@ -26,8 +26,8 @@ export type Extension = {
 }
 
 export type Provider = {
-    name?: string
-    prefix?: string
+    name: string
+    prefix: string
     identifier?: string
     mantela?: string
 }
