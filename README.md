@@ -1,5 +1,5 @@
 # mikopbx-mantela
-[MikoPBX](https://www.mikopbx.com/)の設定データベースから[mantela.json](https://github.com/KusaReMKN/mantela/blob/main/MANTELA.md))のテンプレートを生成する
+[MikoPBX](https://www.mikopbx.com/)の設定データベースから[mantela.json](https://github.com/KusaReMKN/mantela/blob/main/MANTELA.md)のテンプレートを生成する
 
 ## 使い方
 ```bash
