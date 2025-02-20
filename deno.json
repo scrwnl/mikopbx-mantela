@@ -1,8 +1,9 @@
 {
   "tasks": {
     "fmt": "deno fmt && deno lint",
-    "dev": "deno run -A main.ts",
-    "build": "deno compile -A --output build/mikopbx-mantela main.ts"
+    "genver": "./genver.sh",
+    "dev": "deno task genver && deno run -A main.ts",
+    "build": "deno task genver && deno compile -A --output build/mikopbx-mantela main.ts"
   },
   "imports": {
     "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
