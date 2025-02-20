@@ -28,7 +28,7 @@ export type Extension = {
 
 export type Provider = {
     name: string
-    prefix: string
+    prefix?: string
     identifier?: string
     mantela?: string
 }
