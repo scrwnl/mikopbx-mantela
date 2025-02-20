@@ -2,6 +2,7 @@ import { parseArgs } from "@std/cli";
 import { Database } from "@db/sqlite";
 import {Mantela, AboutMe, Extension, Provider} from "./types.ts"
 import { dedent } from "ts-dedent"
+import { version } from "./version.ts";
 
 
 const args = parseArgs(Deno.args, {
@@ -20,7 +21,7 @@ if (args["help"] || args["h"]) {
     Deno.exit(0)
 } else if (args["version"] || args["v"]) {
     console.log(dedent`
-        mikopbx-mantela version 
+        mikopbx-mantela version ${version}
         対応するMantelaの版: https://github.com/KusaReMKN/mantela/tree/3113fa8ad6a23859066708e88564f424a153369f
         `)
     Deno.exit(0);
