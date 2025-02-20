@@ -1,4 +1,5 @@
-import { Database } from "jsr:@db/sqlite@0.12.0";
+import { parseArgs } from "@std/cli";
+import { Database } from "@db/sqlite";
 import {Mantela, AboutMe, Extension, Provider} from "./types.ts"
 
 let dbPath: string = "mikopbx.db"

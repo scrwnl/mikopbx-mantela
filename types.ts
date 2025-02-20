@@ -1,5 +1,6 @@
 export type Mantela = {
-    version:string
+    $schema?: string
+    version: string
     aboutMe: AboutMe
     extensions:Extension[]
     providers:Provider[]
