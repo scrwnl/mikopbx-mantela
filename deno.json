@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "fmt": "deno fmt && deno lint",
     "dev": "deno run -A main.ts",
     "build": "deno compile -A --output build/mikopbx-mantela main.ts"
   },
