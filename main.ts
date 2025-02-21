@@ -2,7 +2,7 @@ import { parseArgs } from "@std/cli";
 import { Database } from "@db/sqlite";
 import {Mantela, AboutMe, Extension, Provider} from "./types.ts"
 import { dedent } from "ts-dedent"
-import { version } from "./build/version.ts";
+import { version } from "./version.ts";
 
 
 const args = parseArgs(Deno.args, {
