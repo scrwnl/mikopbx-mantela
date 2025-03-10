@@ -94,7 +94,7 @@ if (args["include-self"]) {
 
 // JSONにするオブジェクトをつくる
 const mantela: Mantela = {
-    $schema: "https://kusaremkn.github.io/mantela/mantela.schema.json",
+    $schema: "https://tkytel.github.io/mantela/mantela.schema.json",
     version: "0.0.0",
     aboutMe: aboutMe,
     extensions: extensions,
