@@ -22,7 +22,7 @@ if (args["help"] || args["h"]) {
 } else if (args["version"] || args["v"]) {
     console.log(dedent`
         mikopbx-mantela バージョン: ${version}
-        対応するMantela仕様: https://github.com/KusaReMKN/mantela/tree/3113fa8ad6a23859066708e88564f424a153369f
+        対応するMantela仕様: 0.0.0
         `)
     Deno.exit(0);
 }
